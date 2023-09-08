@@ -10,9 +10,9 @@ from sudokuApiHandler import (
 )
 
 # creating the flask app
-app = Flask(__name__)
+application = Flask(__name__)
 # creating an API object
-api = Api(app)
+api = Api(application)
 
 
 def check_if_full_board(x):
@@ -20,19 +20,19 @@ def check_if_full_board(x):
         abort("This not an valid value!")
 
 
-@app.route("/api/fullgame", methods=["GET"])
+@application.route("/api/fullgame", methods=["GET"])
 def full_game():
     res = sodoku_full_game_handler()
     return jsonify(res["message"]), res["status_code"]
 
 
-@app.route("/api/makeboard", methods=["GET"])
+@application.route("/api/makeboard", methods=["GET"])
 def make_board():
     res = sodoku_board_handler()
     return jsonify(res["message"]), res["status_code"]
 
 
-@app.route("/api/solver", methods=["POST"])
+@application.route("/api/solver", methods=["POST"])
 def solver():
     data = request.get_json()
     print(data)
@@ -44,4 +44,4 @@ def solver():
 
 # driver function
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True, host='0.0.0.0')
