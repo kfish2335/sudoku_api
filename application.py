@@ -1,6 +1,7 @@
 # using flask_restful
 from flask import Flask, jsonify, request
-from flask_restful import Api, abort, reqparse
+from flask_restful import Api
+from flask_cors import CORS
 
 from sudokuApiHandler import (
     input_check,
@@ -12,12 +13,10 @@ from sudokuApiHandler import (
 # creating the flask app
 application = Flask(__name__)
 # creating an API object
+CORS(application)
 api = Api(application)
 
 
-def check_if_full_board(x):
-    if not input_check(x):
-        abort("This not an valid value!")
 
 
 @application.route("/api/fullgame", methods=["GET"])
@@ -44,4 +43,4 @@ def solver():
 
 # driver function
 if __name__ == "__main__":
-    application.run(debug=True, host='0.0.0.0')
+    application.run(debug=True)
