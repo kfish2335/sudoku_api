@@ -43,4 +43,4 @@ def solver():
 
 # driver function
 if __name__ == "__main__":
-    application.run(debug=True)
+    application.run(ssl_context='adhoc')
