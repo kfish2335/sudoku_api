@@ -12,7 +12,7 @@ class Board:
         base = 3
         side = base * base
 
-        # pattern for a baseline valid solution
+        
         def pattern(r, c):
             return (base * (r % base) + r // base + c) % side
 
@@ -23,7 +23,7 @@ class Board:
         rows = [g * base + r for g in shuffle(rBase) for r in shuffle(rBase)]
         cols = [g * base + c for g in shuffle(rBase) for c in shuffle(rBase)]
         nums = shuffle(range(1, base * base + 1))
-        # produce board using randomized baseline pattern
+        
         return [[nums[pattern(r, c)] for c in cols] for r in rows]
 
     def change_board(self):
@@ -41,13 +41,14 @@ class Board:
         self.puzzle = self.make_puzzle()
 
 
-class SudukoSolver:
+class SudokuSolver:
     def __init__(self, board):
         self.board = board
         self.ans = []
         self.count = 0
 
     def start_solver(self):
+        self.ans = []
         self.solve()
         return self.count
 

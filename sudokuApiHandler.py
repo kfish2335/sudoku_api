@@ -17,7 +17,7 @@ def sudoku_board_genarator():
 
 
 def sudoku_board_solver(p):
-    ps = sudoku.SudukoSolver(p)
+    ps = sudoku.SudokuSolver(p)
     if ps.start_solver() == 1:
         return [True, ps]
     else:
