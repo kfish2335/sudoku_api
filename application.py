@@ -1,7 +1,7 @@
 # using flask_restful
 from flask import Flask, jsonify, request
-from flask_restful import Api
 from flask_cors import CORS
+from flask_restful import Api
 
 from sudokuApiHandler import (
     input_check,
@@ -15,8 +15,6 @@ application = Flask(__name__)
 # creating an API object
 CORS(application)
 api = Api(application)
-
-
 
 
 @application.route("/api/fullgame", methods=["GET"])
@@ -43,4 +41,4 @@ def solver():
 
 # driver function
 if __name__ == "__main__":
-    application.run(ssl_context='adhoc')
+    application.run()
