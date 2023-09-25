@@ -31,8 +31,6 @@ Feel free to explore this repository to see how Sudoku puzzles can be generated 
 
 ## How to start on Local Machine
 
-### Prerequisites
-
 
 ### Clone the Repository
 
