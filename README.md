@@ -2,7 +2,7 @@
 
 This application is designed to create a Flask server that can generate valid Sudoku boards and solve any valid Sudoku puzzles, providing solved solutions as responses.
 
-DEMO API: **http://sudoku-env.eba-jtqfjqia.us-east-1.elasticbeanstalk.com/**
+DEMO API: **https://dev.d1omh269zhag1l.amplifyapp.com/**
 
 ## Board Generation
 
